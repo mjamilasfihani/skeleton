@@ -24,6 +24,6 @@
         "phpunit/phpunit": "^9.5"
     },
     "scripts": {
-        "tests": "vendor/bin/phpunit --testdox tests"
+        "test": "vendor/bin/phpunit --testdox tests"
     }
 }
