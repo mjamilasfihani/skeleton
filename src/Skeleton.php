@@ -134,10 +134,8 @@ class Skeleton implements SkeletonInterface
      *
      * @return $this
      */
-    public function setStyles(...$styles)
+    public function setStyles(array $styles)
     {
-        $styles = $this->array($styles);
-
         $this->styles = $styles;
 
         return $this;
@@ -148,11 +146,9 @@ class Skeleton implements SkeletonInterface
      *
      * @return $this
      */
-    public function mergeStyles(...$styles)
+    public function mergeStyles(array $styles)
     {
-        $styles = $this->array($styles);
-
-        $this->merge('styles', $styles);
+        $this->styles = array_merge($this->styles, $styles);
 
         return $this;
     }
@@ -170,10 +166,8 @@ class Skeleton implements SkeletonInterface
      *
      * @return $this
      */
-    public function setScripts(...$scripts)
+    public function setScripts(array $scripts)
     {
-        $scripts = $this->array($scripts);
-
         $this->scripts = $scripts;
 
         return $this;
@@ -184,11 +178,9 @@ class Skeleton implements SkeletonInterface
      *
      * @return $this
      */
-    public function mergeScripts(...$scripts)
+    public function mergeScripts(array $scripts)
     {
-        $scripts = $this->array($scripts);
-
-        $this->merge('scripts', $scripts);
+        $this->scripts = array_merge($this->scripts, $scripts);
 
         return $this;
     }
@@ -226,10 +218,8 @@ class Skeleton implements SkeletonInterface
      *
      * @return $this
      */
-    public function setAttributes(...$attributes)
+    public function setAttributes(array $attributes)
     {
-        $attributes = $this->array($attributes);
-
         $this->attributes = $attributes;
 
         return $this;
@@ -240,11 +230,9 @@ class Skeleton implements SkeletonInterface
      *
      * @return $this
      */
-    public function mergeAttributes(...$attributes)
+    public function mergeAttributes(array $attributes)
     {
-        $attributes = $this->array($attributes);
-
-        $this->merge('attributes', $attributes);
+        $this->attributes = array_merge($this->attributes, $attributes);
 
         return $this;
     }
@@ -311,8 +299,10 @@ class Skeleton implements SkeletonInterface
 
     /**
      * Get value from `$cookieBanner` var.
+     *
+     * @return null|string
      */
-    public function getCookieBanner(): string
+    public function getCookieBanner()
     {
         return $this->cookieBanner;
     }
@@ -322,7 +312,7 @@ class Skeleton implements SkeletonInterface
      *
      * @return $this
      */
-    public function setCookieBanner(?string $banner)
+    public function setCookieBanner(string $banner)
     {
         $this->cookieBanner = $banner;
 
@@ -362,7 +352,7 @@ class Skeleton implements SkeletonInterface
      *
      * @return $this
      */
-    public function setCharset(string $charset)
+    public function setCharset(string $charset = 'UTF-8')
     {
         $this->charset = $charset;
 

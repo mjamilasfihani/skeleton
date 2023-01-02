@@ -14,14 +14,14 @@ interface SkeletonInterface
      *
      * @return $this
      */
-    public function setStyles(...$styles);
+    public function setStyles(array $styles);
 
     /**
      * Merge new styles into `$styles` without loosing the old.
      *
      * @return $this
      */
-    public function mergeStyles(...$styles);
+    public function mergeStyles(array $styles);
 
     /**
      * Get value from `$scripts` var.
@@ -33,14 +33,14 @@ interface SkeletonInterface
      *
      * @return $this
      */
-    public function setScripts(...$scripts);
+    public function setScripts(array $scripts);
 
     /**
      * Merge new scripts into `$scripts` without loosing the old.
      *
      * @return $this
      */
-    public function mergeScripts(...$scripts);
+    public function mergeScripts(array $scripts);
 
     /**
      * Get value from `$jquery` var.
@@ -64,14 +64,14 @@ interface SkeletonInterface
      *
      * @return $this
      */
-    public function setAttributes(...$attributes);
+    public function setAttributes(array $attributes);
 
     /**
      * Merge new attributes into `$attributes` without loosing the old.
      *
      * @return $this
      */
-    public function mergeAttributes(...$attributes);
+    public function mergeAttributes(array $attributes);
 
     /**
      * Get value from `$preload` var.
@@ -111,15 +111,17 @@ interface SkeletonInterface
 
     /**
      * Get value from `$cookieBanner` var.
+     *
+     * @return null|string
      */
-    public function getCookieBanner(): string;
+    public function getCookieBanner();
 
     /**
      * Set `$cookieBanner` new value.
      *
      * @return $this
      */
-    public function setCookieBanner(?string $banner);
+    public function setCookieBanner(string $banner);
 
     /**
      * Get value from `$doctype` var.
@@ -143,7 +145,7 @@ interface SkeletonInterface
      *
      * @return $this
      */
-    public function setCharset(string $charset);
+    public function setCharset(string $charset = 'UTF-8');
 
     /**
      * Get value from `$language` var.
