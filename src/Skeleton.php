@@ -62,7 +62,7 @@ class Skeleton implements SkeletonInterface
      * The declaration is not an HTML tag. It is an "information" to the browser
      * about what document type to expect. - W3SCHOOLS.COM
      */
-    protected string $doctype = '<!DOCTYPE>';
+    protected string $doctype = '<!DOCTYPE html>';
 
     /**
      * Meta Charset
