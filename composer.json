@@ -1,0 +1,20 @@
+{
+    "name": "mjamilasfihani/skeleton",
+    "description": "Skeleton layout builder, make with pure PHP.",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Skeleton\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Mohammad Jamil Asfihani",
+            "email": "mohammadjamilasfihani@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "require-dev": {}
+}
