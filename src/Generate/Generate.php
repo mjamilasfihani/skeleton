@@ -37,6 +37,10 @@ class Generate implements GenerateInterface
 
         $str .= '<script type="text/javascript" src="' . $this->skeleton->getJquery() . '"></script>';
 
+        foreach ($this->skeleton->getScripts() as $script) {
+            $str .= '<script type="text/javascript" src="' . $script . '"></script>';
+        }
+
         if ($this->skeleton->getStatusPreloadIsEnabled()) {
             $str .= '<style type="text/css"> .preloader {position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 9999; background-color: #fff; } .loading {position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%); font: 14px arial; } </style>';
         }
@@ -61,10 +65,6 @@ class Generate implements GenerateInterface
         $str = '';
 
         $cookieBanner = $this->skeleton->getCookieBanner();
-
-        foreach ($this->skeleton->getScripts() as $script) {
-            $str .= '<script type="text/javascript" src="' . $script . '"></script>';
-        }
 
         if (null !== $cookieBanner) {
             $str .= '<script type="text/javascript" src="' . $cookieBanner . '"></script>';
