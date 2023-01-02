@@ -2,12 +2,8 @@
 
 namespace Skeleton;
 
-use Skeleton\Traits\Method\SkeletonMethod;
-
 class Skeleton implements SkeletonInterface
 {
-    use SkeletonMethod;
-
     /**
      * Default CSS
      *
