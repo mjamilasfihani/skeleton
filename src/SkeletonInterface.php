@@ -74,42 +74,6 @@ interface SkeletonInterface
     public function mergeAttributes(array $attributes);
 
     /**
-     * Get value from `$preload` var.
-     */
-    public function getStatusPreload(): bool;
-
-    /**
-     * Alias of `getStatusPreload()` with status is `true`.
-     */
-    public function getStatusPreloadIsEnabled(): bool;
-
-    /**
-     * Alias of `getStatusPreload()` with status is `false`.
-     */
-    public function getStatusPreloadIsDisabled(): bool;
-
-    /**
-     * Set `$preload` status.
-     *
-     * @return $this
-     */
-    public function setStatusPreload(bool $status);
-
-    /**
-     * Alias of `setStatusPreload(bool $status)` with status is `true`.
-     *
-     * @return $this
-     */
-    public function setStatusPreloadIsEnabled();
-
-    /**
-     * Alias of `setStatusPreload(bool $status)` with status is `false`.
-     *
-     * @return $this
-     */
-    public function setStatusPreloadIsDisabled();
-
-    /**
      * Get value from `$cookieBanner` var.
      *
      * @return null|string

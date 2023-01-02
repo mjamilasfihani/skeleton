@@ -36,13 +36,6 @@ class Skeleton implements SkeletonInterface
     protected array $attributes = [];
 
     /**
-     * PreLoad Page
-     *
-     * If you want to use preloader screen, set to `true`. The default is `false`.
-     */
-    protected bool $preload = false;
-
-    /**
      * Cookie Banner
      *
      * If you need a cookie banner, feel free to set a value at here.
@@ -229,66 +222,6 @@ class Skeleton implements SkeletonInterface
     public function mergeAttributes(array $attributes)
     {
         $this->attributes = array_merge($this->attributes, $attributes);
-
-        return $this;
-    }
-
-    /**
-     * Get value from `$preload` var.
-     */
-    public function getStatusPreload(): bool
-    {
-        return $this->preload;
-    }
-
-    /**
-     * Alias of `getStatusPreload()` with status is `true`.
-     */
-    public function getStatusPreloadIsEnabled(): bool
-    {
-        return $this->getStatusPreload() === true;
-    }
-
-    /**
-     * Alias of `getStatusPreload()` with status is `false`.
-     */
-    public function getStatusPreloadIsDisabled(): bool
-    {
-        return $this->getStatusPreload() === false;
-    }
-
-    /**
-     * Set `$preload` status.
-     *
-     * @return $this
-     */
-    public function setStatusPreload(bool $status)
-    {
-        $this->preload = $status;
-
-        return $this;
-    }
-
-    /**
-     * Alias of `setStatusPreload(bool $status)` with status is `true`.
-     *
-     * @return $this
-     */
-    public function setStatusPreloadIsEnabled()
-    {
-        $this->setStatusPreload(true);
-
-        return $this;
-    }
-
-    /**
-     * Alias of `setStatusPreload(bool $status)` with status is `false`.
-     *
-     * @return $this
-     */
-    public function setStatusPreloadIsDisabled()
-    {
-        $this->setStatusPreload(false);
 
         return $this;
     }

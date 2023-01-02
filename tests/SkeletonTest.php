@@ -111,30 +111,6 @@ final class SkeletonTest extends TestCase
     /**
      * @return void
      */
-    public function testPreload()
-    {
-        $result = $this->skeleton->getStatusPreload();
-
-        $this->assertIsBool($result);
-
-        $this->assertNotTrue($result);
-
-        $this->skeleton->setStatusPreload(true);
-
-        $this->assertTrue($this->skeleton->getStatusPreload());
-
-        $this->skeleton->setStatusPreloadIsDisabled();
-
-        $this->assertFalse($this->skeleton->getStatusPreloadIsEnabled());
-
-        $this->skeleton->setStatusPreloadIsEnabled();
-
-        $this->assertTrue($this->skeleton->getStatusPreloadIsEnabled());
-    }
-
-    /**
-     * @return void
-     */
     public function testCookieBanner()
     {
         $result = $this->skeleton->getCookieBanner();

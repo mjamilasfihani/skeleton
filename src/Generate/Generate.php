@@ -41,10 +41,6 @@ class Generate implements GenerateInterface
             $str .= '<script type="text/javascript" src="' . $script . '"></script>';
         }
 
-        if ($this->skeleton->getStatusPreloadIsEnabled()) {
-            $str .= '<style type="text/css"> .preloader {position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 9999; background-color: #fff; } .loading {position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%); font: 14px arial; } </style>';
-        }
-
         $attributes = '';
 
         foreach ($this->skeleton->getAttributes() as $key => $value) {
@@ -52,10 +48,6 @@ class Generate implements GenerateInterface
         }
 
         $str .= '<title>' . $this->skeleton->getTitle() . '</title></head><body' . $attributes . '>';
-
-        if ($this->skeleton->getStatusPreloadIsEnabled()) {
-            $str .= '<div class="preloader"><div class="loading"><img src="https://cdn.jsdelivr.net/gh/mjamilasfihani/ui/astoart.com/img/loading.gif" width="86"><p style="font-size: 1.0rem">Please Wait</p></div></div>';
-        }
 
         return $str;
     }
@@ -68,10 +60,6 @@ class Generate implements GenerateInterface
 
         if (null !== $cookieBanner) {
             $str .= '<script type="text/javascript" src="' . $cookieBanner . '"></script>';
-        }
-
-        if ($this->skeleton->getStatusPreloadIsEnabled()) {
-            $str .= '<script type="text/javascript">$(document).ready(function(){$(".preloader").fadeOut(); })</script>';
         }
 
         $str .= '</body></html>';
