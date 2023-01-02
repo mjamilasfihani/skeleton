@@ -25,7 +25,7 @@ class Generate implements GenerateInterface
 
     public function header(): string
     {
-        $str = $this->skeleton->getDoctype() . '<html lang="' . $this->skeleton->getLanguage() . '"><head><meta charset="' . $this->skeleton->getLanguage() . '">';
+        $str = $this->skeleton->getDoctype() . '<html lang="' . $this->skeleton->getLanguage() . '"><head><meta charset="' . $this->skeleton->getCharset() . '">';
 
         // meta
 
