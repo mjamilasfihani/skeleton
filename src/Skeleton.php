@@ -2,8 +2,12 @@
 
 namespace Skeleton;
 
+use Skeleton\Traits\Method\SkeletonMethod;
+
 class Skeleton implements SkeletonInterface
 {
+	use SkeletonMethod;
+
 	/**
 	 * Default CSS
 	 *
@@ -116,4 +120,312 @@ class Skeleton implements SkeletonInterface
 	//  * @see https://gist.github.com/lancejpollard/1978404
     //  */
     // protected array $meta = [];
+
+	/**
+	 * Get value from `$styles` var.
+	 */
+	public function getStyles(): array
+	{
+		return $this->styles;
+	}
+
+	/**
+	 * Set `$styles` with the new one (replacing).
+	 *
+	 * @return $this
+	 */
+	public function setStyles(...$styles)
+	{
+		$styles = $this->array($styles);
+
+		$this->styles = $styles;
+
+		return $this;
+	}
+
+	/**
+	 * Merge new styles into `$styles` without loosing the old.
+	 *
+	 * @return $this
+	 */
+	public function mergeStyles(...$styles)
+	{
+		$styles = $this->array($styles);
+
+		$this->merge('styles', $styles);
+
+		return $this;
+	}
+
+	/**
+	 * Get value from `$scripts` var.
+	 */
+	public function getScripts(): array
+	{
+		return $this->scripts;
+	}
+
+	/**
+	 * Set `$scripts` with the new one (replacing).
+	 *
+	 * @return $this
+	 */
+	public function setScripts(...$scripts)
+	{
+		$scripts = $this->array($scripts);
+
+		$this->scripts = $scripts;
+
+		return $this;
+	}
+
+	/**
+	 * Merge new scripts into `$scripts` without loosing the old.
+	 *
+	 * @return $this
+	 */
+	public function mergeScripts(...$scripts)
+	{
+		$scripts = $this->array($scripts);
+
+		$this->merge('scripts', $scripts);
+
+		return $this;
+	}
+
+	/**
+	 * Get value from `$jquery` var.
+	 */
+	public function getJquery(): string
+	{
+		return $this->jquery;
+	}
+
+	/**
+	 * Set `$jquery` with the new one (replacing).
+	 *
+	 * @return $this
+	 */
+	public function setJquery(string $jquery)
+	{
+		$this->jquery = $jquery;
+
+		return $this;
+	}
+
+	/**
+	 * Get value from `$attributes` var.
+	 */
+	public function getAttributes(): array
+	{
+		return $this->attributes;
+	}
+
+	/**
+	 * Set `$attributes` with the new one (replacing).
+	 *
+	 * @return $this
+	 */
+	public function setAttributes(...$attributes)
+	{
+		$attributes = $this->array($attributes);
+
+		$this->attributes = $attributes;
+
+		return $this;
+	}
+
+	/**
+	 * Merge new attributes into `$attributes` without loosing the old.
+	 *
+	 * @return $this
+	 */
+	public function mergeAttributes(...$attributes)
+	{
+		$attributes = $this->array($attributes);
+
+		$this->merge('attributes', $attributes);
+
+		return $this;
+	}
+
+	/**
+	 * Get value from `$preload` var.
+	 */
+	public function getStatusPreload(): bool
+	{
+		return $this->preload;
+	}
+
+	/**
+	 * Alias of `getStatusPreload()` with status is `true`.
+	 */
+	public function getStatusPreloadIsEnabled(): bool
+	{
+		return $this->getStatusPreload() === true;
+	}
+
+	/**
+	 * Alias of `getStatusPreload()` with status is `false`.
+	 */
+	public function getStatusPreloadIsDisabled(): bool
+	{
+		return $this->getStatusPreload() === false;
+	}
+
+	/**
+	 * Set `$preload` status.
+	 *
+	 * @return $this
+	 */
+	public function setStatusPreload(bool $status)
+	{
+		$this->preload = $status;
+
+		return $this;
+	}
+
+	/**
+	 * Alias of `setStatusPreload(bool $status)` with status is `true`.
+	 *
+	 * @return $this
+	 */
+	public function setStatusPreloadIsEnabled()
+	{
+		$this->setStatusPreload(true);
+
+		return $this;
+	}
+
+	/**
+	 * Alias of `setStatusPreload(bool $status)` with status is `false`.
+	 *
+	 * @return $this
+	 */
+	public function setStatusPreloadIsDisabled()
+	{
+		$this->setStatusPreload(false);
+
+		return $this;
+	}
+
+	/**
+	 * Get value from `$cookieBanner` var.
+	 */
+	public function getCookieBanner(): string
+	{
+		return $this->cookieBanner;
+	}
+
+	/**
+	 * Set `$cookieBanner` new value.
+	 *
+	 * @return $this
+	 */
+	public function setCookieBanner(?string $banner)
+	{
+		$this->cookieBanner = $banner;
+
+		return $this;
+	}
+
+	/**
+	 * Get value from `$doctype` var.
+	 */
+	public function getDoctype(): string
+	{
+		return $this->doctype;
+	}
+
+	/**
+	 * Set `$doctype` new value.
+	 *
+	 * @return $this
+	 */
+	public function setDoctype(string $doctype)
+	{
+		$this->doctype = $doctype;
+
+		return $this;
+	}
+
+	/**
+	 * Get value from `$charset` var.
+	 */
+	public function getCharset(): string
+	{
+		return $this->charset;
+	}
+
+	/**
+	 * Set `$charset` new value.
+	 *
+	 * @return $this
+	 */
+	public function setCharset(string $charset)
+	{
+		$this->charset = $charset;
+
+		return $this;
+	}
+
+	/**
+	 * Get value from `$language` var.
+	 */
+	public function getLanguage(): string
+	{
+		return $this->language;
+	}
+
+	/**
+	 * Set `$language` new value.
+	 *
+	 * @return $this
+	 */
+	public function setLanguage(string $language)
+	{
+		$this->language = $language;
+
+		return $this;
+	}
+
+	/**
+	 * Get value from `$title` var.
+	 */
+	public function getTitle(): string
+	{
+		return $this->title;
+	}
+
+	/**
+	 * Set `$title` new value.
+	 *
+	 * @return $this
+	 */
+	public function setTitle(string $title)
+	{
+		$this->title = $title;
+
+		return $this;
+	}
+
+	/**
+	 * Get value from `$favicon` var.
+	 */
+	public function getFavicon(): string
+	{
+		return $this->favicon;
+	}
+
+	/**
+	 * Set `$favicon` new value,
+	 *
+	 * @return $this
+	 */
+	public function setFavicon(string $favicon)
+	{
+		$this->favicon = $favicon;
+
+		return $this;
+	}
 }
